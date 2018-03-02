@@ -1,6 +1,6 @@
 function getAllBook(){
 	$.ajax({
-		url: 'http://localhost:3000/getAllBook',
+		url: 'http://www.piyujie.top:2222/getAllBook',
 		type: 'GET',
 		dataType: 'json',
 		success:function(data){
@@ -47,7 +47,7 @@ function getAllBook(){
 				$(".editBox input:eq(9)").val(location);
 				$(".certain_edit").click(function() {
 					$.ajax({
-						url: 'http://localhost:3000/editSearchBook',
+						url: 'http://www.piyujie.top:2222/editSearchBook',
 						type: 'post',
 						dataType: 'json',
 						data: {
@@ -80,7 +80,7 @@ function getAllBook(){
 				$(this).parent().parent().remove();
 				var id = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
 				$.ajax({
-					url: 'http://localhost:3000/delbook',
+					url: 'http://www.piyujie.top:2222/delbook',
 					type: 'POST',
 					dataType: 'json',
 					data: {book_id: id},

@@ -17,7 +17,7 @@ $(function() {
 					getAllBook();
 				} else {
 					$.ajax({
-						url: 'http://localhost:3000/getBookById',
+						url: 'http://www.piyujie.top:2222/getBookById',
 						type: 'post',
 						data: {
 							bookId: $("#bookId").val()
@@ -75,7 +75,7 @@ $(function() {
 								$(".editBox input:eq(9)").val(location);
 								$(".certain_edit").click(function() {
 									$.ajax({
-										url: 'http://localhost:3000/editSearchBook',
+										url: 'http://www.piyujie.top:2222/editSearchBook',
 										type: 'post',
 										dataType: 'json',
 										data: {
@@ -108,7 +108,7 @@ $(function() {
 								$(this).parent().parent().remove();
 								var id = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
 								$.ajax({
-									url: 'http://localhost:3000/delbook',
+									url: 'http://www.piyujie.top:2222/delbook',
 									type: 'POST',
 									dataType: 'json',
 									data: {book_id: id},
@@ -136,7 +136,7 @@ $(function() {
 					getAllBook();
 				} else {
 					$.ajax({
-						url: 'http://localhost:3000/getBookByName',
+						url: 'http://www.piyujie.top:2222/getBookByName',
 						type: 'post',
 						data: {
 							bookName: $("#search_bookName").val()
@@ -194,7 +194,7 @@ $(function() {
 								$(".editBox input:eq(9)").val(location);
 								$(".certain_edit").click(function() {
 									$.ajax({
-										url: 'http://localhost:3000/editSearchBook',
+										url: 'http://www.piyujie.top:2222/editSearchBook',
 										type: 'post',
 										dataType: 'json',
 										data: {
@@ -227,7 +227,7 @@ $(function() {
 								$(this).parent().parent().remove();
 								var id = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
 								$.ajax({
-									url: 'http://localhost:3000/delbook',
+									url: 'http://www.piyujie.top:2222/delbook',
 									type: 'POST',
 									dataType: 'json',
 									data: {book_id: id},
@@ -252,7 +252,7 @@ $(function() {
 			$(".book_sort_box p a").click(function() {
 				console.log($(this).html());
 				$.ajax({
-					url: 'http://localhost:3000/getBookBySort',
+					url: 'http://www.piyujie.top:2222/getBookBySort',
 					type: 'post',
 					data: {
 						bookSort: $(this).html()
@@ -310,7 +310,7 @@ $(function() {
 							$(".editBox input:eq(9)").val(location);
 							$(".certain_edit").click(function() {
 								$.ajax({
-									url: 'http://localhost:3000/editSearchBook',
+									url: 'http://www.piyujie.top:2222/editSearchBook',
 									type: 'post',
 									dataType: 'json',
 									data: {
@@ -343,7 +343,7 @@ $(function() {
 							$(this).parent().parent().remove();
 							var id = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
 							$.ajax({
-								url: 'http://localhost:3000/delbook',
+								url: 'http://www.piyujie.top:2222/delbook',
 								type: 'POST',
 								dataType: 'json',
 								data: {book_id: id},
@@ -380,7 +380,7 @@ $(function() {
 			$(".pass_box").css("cursor","pointer")
 			$(".pass_box").click(function(){
 				$.ajax({
-					url:"http://localhost:3000/change_pass",
+					url:"http://www.piyujie.top:2222/change_pass",
 					type:"post",
 					data:{
 						manager_id:Num,
@@ -403,7 +403,7 @@ $(function() {
 		$("#cont").load("html/check_borrowStatus.html",function(){
 			//先获取所有的借阅记录
 			$.ajax({
-				url: 'http://localhost:3000/getAllBorrow',
+				url: 'http://www.piyujie.top:2222/getAllBorrow',
 				type: 'GET',
 				dataType: 'json',
 				success:function(data){
@@ -474,7 +474,7 @@ $(function() {
 						});
 						//请求后台，后台对状态进行改变
 						$.ajax({
-							url: 'http://localhost:3000/checkStatus',
+							url: 'http://www.piyujie.top:2222/checkStatus',
 							type: 'post',
 							dataType: 'json',
 							data: {
@@ -496,7 +496,7 @@ $(function() {
 	$("#delayBorrow").click(function(){
 		$("#cont").load("html/delayBorrow.html",function(){
 			$.ajax({
-				url: 'http://localhost:3000/getAllBorrow',
+				url: 'http://www.piyujie.top:2222/getAllBorrow',
 				type: 'GET',
 				dataType: 'json',
 				success:function(data){
@@ -525,7 +525,7 @@ $(function() {
 							var val = $("#daycount").val();//获取输入的天数
 							var newDate=new Date(return_time.setDate(return_time.getDate()+Number(val)));
 							$.ajax({
-								url: 'http://localhost:3000/changeBoorrowTime',
+								url: 'http://www.piyujie.top:2222/changeBoorrowTime',
 								type: 'post',
 								dataType: 'json',
 								data: {
@@ -561,7 +561,7 @@ $(function() {
 			//获取到页面上输入的值
 			$(".add_box").click(function(){
 				$.ajax({
-					url:'http://localhost:3000/addbook',
+					url:'http://www.piyujie.top:2222/addbook',
 					type:'post',
 					data:{
 						book_id:$("input:eq(0)").val(),
@@ -589,7 +589,7 @@ $(function() {
 		$("#cont").load("html/AddStu.html",function(){
 			$(".add_box").click(function(){
 				$.ajax({
-					url:'http://localhost:3000/addstu',
+					url:'http://www.piyujie.top:2222/addstu',
 					type:'post',
 					data:{
 						stu_id:$("input:eq(0)").val(),
@@ -613,7 +613,7 @@ $(function() {
 			//显示在页面上
 			$.ajax({
 				type:"post",
-				url:"http://localhost:3000/showbook",
+				url:"http://www.piyujie.top:2222/showbook",
 				dataType:"json",
 				success:function(data){
 					var str='';
@@ -634,7 +634,7 @@ $(function() {
 					$("#delbtn span").each(function(){						
 						$(this).click(function(){
 							$.ajax({
-								url:"http://localhost:3000/delbook",
+								url:"http://www.piyujie.top:2222/delbook",
 								type:"post",
 								data:{
 									book_id:$(this).parent().parent().children().eq(0).html()
@@ -655,7 +655,7 @@ $(function() {
 			//显示在页面上
 			$.ajax({
 				type:"post",
-				url:"http://localhost:3000/showstu",
+				url:"http://www.piyujie.top:2222/showstu",
 				dataType:"json",
 				success:function(data){
 					var str='';
@@ -676,7 +676,7 @@ $(function() {
 					$("#delbtn span").each(function(){						
 						$(this).click(function(){
 							$.ajax({
-								url:"http://localhost:3000/delstu",
+								url:"http://www.piyujie.top:2222/delstu",
 								type:"post",
 								data:{
 									stu_id:$(this).parent().parent().children().eq(0).html()
@@ -704,7 +704,7 @@ $(function() {
 				`;
 				$.ajax({
 					type: "get",
-					url: "http://localhost:3000/author",
+					url: "http://www.piyujie.top:2222/author",
 					async: true,
 					data: {
 						author: val
@@ -744,7 +744,7 @@ $(function() {
 			var str1 = '';
 			$.ajax({
 				type: "get",
-				url: "http://localhost:3000/stu",
+				url: "http://www.piyujie.top:2222/stu",
 				async: true,
 				success: function(data) {
 					data = JSON.parse(data);
@@ -869,7 +869,7 @@ $(function() {
 		$("#cont").load("html/loaningRecord.html", function() {
 			$.ajax({
 				type: "get",
-				url: "http://localhost:3000/loan",
+				url: "http://www.piyujie.top:2222/loan",
 				async: true,
 				success: function(data) {
 					data = JSON.parse(data);
@@ -971,7 +971,7 @@ $(function() {
 					function getStuMess(stu_id){
 						$.ajax({
 							type:"get",
-							url:"http://localhost:3000/loan_stu",
+							url:"http://www.piyujie.top:2222/loan_stu",
 							data:{
 								id:stu_id
 							},
@@ -999,7 +999,7 @@ $(function() {
 					function getBookMess(book_id){
 						$.ajax({
 							type:"get",
-							url:"http://localhost:3000/loan_book",
+							url:"http://www.piyujie.top:2222/loan_book",
 							data:{
 								id:book_id
 							},
@@ -1033,7 +1033,7 @@ $(function() {
 		$("#cont").load("html/penalty.html", function() {
 			$.ajax({
 				type: "get",
-				url: "http://localhost:3000/pena",
+				url: "http://www.piyujie.top:2222/pena",
 				async: true,
 				success: function(data) {
 					data = JSON.parse(data);
@@ -1091,7 +1091,7 @@ $(function() {
 						var num = 0;
 						$.ajax({
 							type: "get",
-							url: "http://localhost:3000/pena",
+							url: "http://www.piyujie.top:2222/pena",
 							async: true,
 							success: function(data) {
 								data = JSON.parse(data);
@@ -1135,7 +1135,7 @@ $(function() {
 							status.html('0');
 							$.ajax({
 								type: "get",
-								url: "http://localhost:3000/pena_pay",
+								url: "http://www.piyujie.top:2222/pena_pay",
 								async: true,
 								data: {
 									id: id

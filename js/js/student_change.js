@@ -1,7 +1,7 @@
 function editStudent() {
 	$.ajax({
 		type: "get",
-		url: "http://localhost:3000/getstudent",
+		url: "http://localhost:2222/getstudent",
 		async: true,
 		dataType: "json",
 		success: function(data) {
@@ -40,7 +40,7 @@ function editStudent() {
 					$("#save").click(function() {
 						$.ajax({
 							type: "post",
-							url: "http://localhost:3000/editstudent",
+							url: "http://localhost:2222/editstudent",
 							async: true,
 							dataType: "json",
 							data: {

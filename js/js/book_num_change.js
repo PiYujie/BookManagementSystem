@@ -1,7 +1,7 @@
 function editNum(){
 	$.ajax({
 		type: "get",
-		url: "http://localhost:3000/getnum",
+		url: "http://www.piyujie.top:2222/getnum",
 		async: true,
 		dataType: "json",
 		success: function(data) {
@@ -38,7 +38,7 @@ function editNum(){
 					$(".num_info div:eq(0)").click(function() {
 						$.ajax({
 							type: "post",
-							url: "http://localhost:3000/editnum",
+							url: "http://www.piyujie.top:2222/editnum",
 							async: true,
 							dataType: "json",
 							data: {

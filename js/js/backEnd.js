@@ -5,9 +5,9 @@ var express = require("express");
 var app = express();
 //创建数据库连接
 var connect = mysql.createConnection({
-	host:'10.40.153.110',
+	host:'rm-wz926t7cx37l367f1do.mysql.rds.aliyuncs.com',
 	user:'pyj',
-	password:'123',
+	password:'aliyunPYJ0207',
 	database:'bookmanagement'
 });
 // 处理post请求的请求体模块
@@ -106,9 +106,9 @@ app.get("/getAllBook",function(req, res){
 	res.append("Access-Control-Allow-Origin","*");
 	//连接后执行——查询
 	connect.query('SELECT * FROM book', function (error, results, fields) {
-		console.log(results);
+//		console.log(results);
 		if (error) throw error;
-		console.log(results);
+//		console.log(results);
 		  res.send(JSON.stringify(results));
 	});
     
@@ -121,9 +121,9 @@ app.post("/getBookById",function(req, res){
 	//连接后执行——查询
 	console.log(req.body);
 	connect.query(`SELECT * FROM book where book_id = ${req.body.bookId} `, function (error, results, fields) {
-		console.log(results);
+//		console.log(results);
 		if (error) throw error;
-			console.log(results);
+//			console.log(results);
 		res.send(JSON.stringify(results));
 	});
 })
@@ -133,9 +133,9 @@ app.post("/getBookByName",function(req, res){
 	//连接后执行——查询
 	console.log(req.body);
 	connect.query(`SELECT * FROM book where book_name LIKE '%${req.body.bookName}%' `, function (error, results, fields) {
-		console.log(results);
+//		console.log(results);
 		if (error) throw error;
-			console.log(results);
+//			console.log(results);
 		res.send(JSON.stringify(results));
 	});
 })
@@ -148,7 +148,7 @@ app.post("/getBookBySort",function(req, res){
 	connect.query(`SELECT * FROM book where sort like '%${req.body.bookSort}%' `, function (error, results, fields) {
 		console.log(results);
 		if (error) throw error;
-			console.log(results);
+//			console.log(results);
 		res.send(JSON.stringify(results));
 	});
 })
@@ -169,7 +169,7 @@ app.get("/getAllBorrow",function(req, res){
 app.post("/checkStatus",function(req, res){
 	res.append("Access-Control-Allow-Origin","*");
 	//连接后执行——查询
-	console.log(req.body);
+//	console.log(req.body);
 	connect.query(`UPDATE borrow SET status = '${req.body.status}',fine = ${req.body.fine},current = '${req.body.current}' where id = ${req.body.borrow_id}`, function (error, results, fields) {
 		console.log("success");
 		if (error) throw error;
@@ -248,7 +248,7 @@ app.post("/delstu",function(req, res){
 app.post("/change_pass",function(req, res){
     res.append("Access-Control-Allow-Origin","*");
 	var sql = `UPDATE maneger SET manager_pass='${req.body.new_pass}' WHERE id=${req.body.manager_id}`;
-	console.log(sql)
+//	console.log(sql)
     connect.query(sql, function (error, results, fields){
         if (error) throw error;
         res.send(JSON.stringify(results));
@@ -313,10 +313,10 @@ app.post("/editSearchBook",function(req, res){
 	connect.query(`UPDATE book SET book_name ='${req.body.name}',sort='${req.body.sort}',author='${req.body.author}',publish='${req.body.publish}',price='${req.body.price}',barcode='${req.body.barcode}',total_num='${req.body.total_num}',count='${req.body.count}',location='${req.body.location}' where book_id = ${req.body.id} `, function (error, results, fields) {
 		console.log(results);
 		if (error) throw error;
-			console.log(results);
+//			console.log(results);
 		res.send(JSON.stringify(results));
 	});
 })
 //监听端口
-app.listen(3000);
-console.log("开启服务器");
+app.listen(2222);
+console.log("开启服务器:2222");

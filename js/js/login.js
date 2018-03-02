@@ -6,7 +6,7 @@ $(function(){
 		if(name.length!=0&&pass.length!=0){
 			$.ajax({
 				type:"get",
-				url:"http://localhost:3000/login",
+				url:"http://localhost:2222/login",
 				data:{
 					name:name,
 					pass:pass
